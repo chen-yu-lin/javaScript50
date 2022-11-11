@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    background-color: #333;
+    color: #222;
+}
+
+.box {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+    background-color: #fafafa;
+    transform-origin: top left;
+    transition: transform 0.4s linear;
+}
+
+.show {
+    transform: rotate(-20deg);
+}
+
+.contain {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background-color: palevioletred;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.4s linear;
+}
+
+.show .contain .circle {
+    transform: rotate(-70deg);
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+}
+
+button:focus {
+    outline: none;
+}
+
+#close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+#open {
+    left: 60%;
+}
+
+.content {
+    margin: 50px auto;
+    max-width: 1000px;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+.content img {
+    max-width: 100%;
+}
+
+.content small {
+    color: #555;
+    font-style: italic;
+}
+
+.content p {
+    color: #333;
+    line-height: 1.5;
+}
+
+nav ul {
+    color: white;
+    font-size: 1rem;
+    list-style: none;
+    position: fixed;
+    top: 65vh;
+}
+
+nav ul li {
+    margin-bottom: 40px;
+    transition: transform 0.4s linear;
+}
+
+nav ul li:nth-child(1) {
+    transform: translateX(-100%);
+}
+
+nav ul li:nth-child(2) {
+    margin-left: 20px;
+    transform: translateX(-150%);
+}
+
+nav ul li:nth-child(3) {
+    margin-left: 40px;
+    transform: translateX(-200%);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+nav ul li a:hover {
+    color: palevioletred;
+}
+
+
+.box.show + nav ul li{
+    transform: translateX(0%);
+    transition-delay: 0.3s;
+}
